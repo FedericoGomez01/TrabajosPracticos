@@ -9,61 +9,50 @@
 
 
 //SUMA
-void suma(float a, float b)
+int suma(float a, float b, float* valorSuma)
 {
 	float resultado;
 
-	resultado = a + b;
+	*valorSuma = a + b;
 
-	printf("\nLa suma de %.2f + %.2f es = %.2f", a, b, resultado);
+	return 0;
 
 }
 
 //RESTA
-void resta(float a, float b)
+int resta(float a, float b, float* valorResta)
 {
 	float resultado;
 
-	resultado = a - b;
+	*valorResta = a - b;
 
-	printf("\nLa resta de %.2f - %.2f es = %.2f", a, b, resultado);
-
+	return 0;
 }
 
 //DIVISION
-void division(float a, float b)
+int division(float a, float b, float* valorDivision)
 {
-	float resultado;
-	if(b == 0)
-	{
-		printf("\nNo es psoible dividir por 0");
-	}
-	else
-	{
-		resultado = a / b;
+	*valorDivision = a / b;
 
-		printf("\nLa division de %.2f / %.2f es = %.2f", a, b, resultado);
-	}
+	return 0;
 }
 
 //MULTIPLICACION
-void multiplicacion(float a, float b)
+int multiplicacion(float a, float b, float* valorMultiplicacion)
 {
-	float resultado;
+	*valorMultiplicacion = a * b;
 
-	resultado = a * b;
-	printf("\nLa multiplicacion de %.2f * %.2f es = %.2f", a, b, resultado);
-
+	return 0;
 }
 
 //FACTORIAL
-int factorial(float n)
+int factorial(float n, float* resultado)
 {
-	int resultado;
+;
 	if(n==1)
 		return 1;
 
-	resultado = n*factorial(n-1);
-	return resultado;
+	*resultado = n*factorial(n-1);
+	return 0;
 
 }

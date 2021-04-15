@@ -9,7 +9,7 @@
 #define OPERACIONES_H_
 
 
-void suma(float, float);
+int suma(float, float, float*);
 
 void resta(float, float);
 

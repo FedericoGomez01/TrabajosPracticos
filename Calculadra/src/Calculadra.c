@@ -23,57 +23,92 @@ int main(void)
 	int factorialA;
 	int factorialB;
 	int respuesta;
+	float valorSuma;
+	float valorResta;
+	float valorDivision;
+	float valorMultiplicacion;
+	int flagPrimerNumero =0;
+	int flagSegundoNumero =0;
 
 	do{
 		printf("---MENU---\n"
 				"1-Ingresar un operador\n"
 				"2-Ingresar el segundo operador\n"
-				"3-Desea usar una operacion?\n"
+				"3-Calcular todas las operaciones\n"
 				"4-Mostrar los resultados\n"
 				"5-Salir");
 		fflush(stdin);
 		scanf("%d", &menu);
 
-
-		printf("Ingrese un numero");
-		fflush(stdin);
-		scanf("%f" ,&a);
-
-		printf("Ingrese un numero");
-		fflush(stdin);
-		scanf("%f", &b);
-
 		printf("Que operacion quiere realizar?: s=suma, r=resta, d=division, m=miltiplicacion f=factorial");
 		fflush(stdin);
 		scanf("%c", &c);
 
-		switch(c)
+		switch(menu)
 		{
-			case 's':
-				suma(a, b);
+			case 1:
+				if(flagPrimerNumero==0)
+				{
+					printf("\nIngrese un numero");
+					fflush(stdin);
+					scanf("%f" ,&a);
+					flagPrimerNumero =1;
+				}
+				else{
+					printf("\nYa ingreso el primer numero");
+				}
 				break;
-			case 'r':
-				resta(a, b);
+			case 2:
+				if(flagSegundoNumero ==0)
+				{
+					printf("\nIngrese el segundo numero");
+					fflush(stdin);
+					scanf("%f", &b);
+				}
+				else
+				{
+					printf("\nYa ingreso el segundo numero");
+				}
+
 				break;
-			case 'd':
-				division(a, b);
+			case 3:
+				if(flagPrimerNumero != 0 && flagSegundoNumero != 0)
+				{
+					suma(a,b, &valorSuma);
+					resta(a,b, &valorResta);
+					if(b == 0)
+					{
+						printf("\nNo es psoible dividir por 0");
+					}
+					else
+					{
+						division(a,b, &valorDivision);
+					}
+
+					multiplicacion(a,b, &valorMultiplicacion);
+					factorial(a, &factorialA);
+					factorial(b, &factorialB);
+				}
+				else
+				{
+					printf("No inicio los numeros a calcular");
+				}
+
 				break;
-			case 'm':
-				multiplicacion(a, b);
-				break;
-			case 'f':
-				factorial(a);
-				factorialA = factorial(a);
+			case 4:
+
+				printf("\nLa suma de %.2f + %.2f es = %.2f",a,b, valorSuma);
+				printf("\nLa resta de %.2f - %.2f es = %.2f", a, b, valorResta);
+				printf("\nLa divisioin de %.2f / %.2f es = %.2f",a,b, valorDivision);
+				printf("\nLa multiplicacion de %.2f * %.2f es = %.2f",a , b, valorMultiplicacion);
 				printf("\nEl factorial de %f es: %d", a, factorialA);
-				factorial(b);
-				factorialB = factorial(b);
 				printf("\nEl factorial de %f es: %d", b, factorialB);
 				break;
-		}
+			case 5:
 
-		printf("\nDesea hacer otra operacion?: 1=si, 0=no");
-		fflush(stdin);
-		scanf("%d", &respuesta);
+				respuesta =0;
+				break;
+		}
 	} while(respuesta);
 
 
