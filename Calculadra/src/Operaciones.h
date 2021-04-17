@@ -9,13 +9,13 @@
 #define OPERACIONES_H_
 
 
-int suma(float, float, float*);
+float suma(float, float, float*);
 
-void resta(float, float);
+float resta(float, float, float*);
 
-void division(float, float);
+float division(float, float, float*);
 
-void multiplicacion(float, float);
+float multiplicacion(float, float , float*);
 
 int factorial(float);
 
