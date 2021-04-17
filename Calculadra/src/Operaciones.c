@@ -9,7 +9,7 @@
 
 
 //SUMA
-float suma(float a, float b, float* valorSuma)
+int suma(int a, int b, int* valorSuma)
 {
 	*valorSuma = a + b;
 
@@ -18,7 +18,7 @@ float suma(float a, float b, float* valorSuma)
 }
 
 //RESTA
-float resta(float a, float b, float* valorResta)
+int resta(int a, int b, int* valorResta)
 {
 	*valorResta = a - b;
 
@@ -26,30 +26,36 @@ float resta(float a, float b, float* valorResta)
 }
 
 //DIVISION
-float division(float a, float b, float* valorDivision)
+int division(int a, int b, float* valorDivision)
 {
-	*valorDivision = a / b;
+	*valorDivision = (float)a / b;
 
 	return 0;
 }
 
 //MULTIPLICACION
-float multiplicacion(float a, float b, float* valorMultiplicacion)
+int multiplicacion(int a, int b, float* valorMultiplicacion)
 {
+
 	*valorMultiplicacion = a * b;
 
 	return 0;
 }
 
 //FACTORIAL
-int factorial(float n)
+int factorial(int n)
 {
-	float resultado;
-	if(n==1)
+	int resultado;
+	if(n==1 || n==0)
 	{
-		return 1;
+		resultado = 1;
 	}
-	resultado = n * factorial(n-1);
+	else
+	{
+
+		resultado = n * factorial(n-1);
+	}
+
 
 	return resultado;
 }

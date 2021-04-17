@@ -9,14 +9,14 @@
 #define OPERACIONES_H_
 
 
-float suma(float, float, float*);
+int suma(int, int, int*);
 
-float resta(float, float, float*);
+int resta(int, int, int*);
 
-float division(float, float, float*);
+int division(int, int, float*);
 
-float multiplicacion(float, float , float*);
+int multiplicacion(int, int , int*);
 
-int factorial(float);
+int factorial(int);
 
 #endif /* OPERACIONES_H_ */
