@@ -13,6 +13,7 @@ int Validate_OnlyNumberInt(char *pData);
 int Validate_OnlyNumberFloat(char *pData);
 int Validate_OnlyAlphabet(char *pData);
 int Validate_OnlyAlphabetWithSpaces(char *pData);
+int Validate_Exit_SN(char* MSJ, char* MSJERROR);
 //GET'S
 int Get_Int(char* MSJ, char* MSJERROR); //Pide un numero y lo valida usando Validation_OnlyInt
 float Get_Float(char* MSJ, char* MSJERROR);
@@ -22,7 +23,7 @@ void Get_OnlyAlphabetStringWithSpaces(char* MSJ, char* MSJERROR,  char* pArray, 
 int Get_IntPositive(char* MSJ, char* MSJERROR);
 
 //FUNCIONES UTILES
-int Validate_Exit_SN(char* MSJ, char* MSJERROR);
+
 void Menu(char* MSJ);
 
 

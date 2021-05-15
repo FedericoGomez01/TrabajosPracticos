@@ -139,7 +139,7 @@ float Get_Float(char* MSJ, char* MSJERROR)
 	fflush(stdin);
 	gets(buffer);
 
-	while((Validate_OnlyNumberFloat(buffer))== 0)
+	while((Validate_OnlyNumberInt(buffer))== 0)
 	{
 		printf(MSJERROR);
 		fflush(stdin);
@@ -210,6 +210,7 @@ int Validate_Exit_SN(char* MSJ, char* MSJERROR){
 	fflush(stdin);
 	scanf("%c", &respuesta);
 
+	respuesta =tolower(respuesta);
 	while(respuesta != 'n' && respuesta != 's')
 	{
 		printf(MSJERROR);
