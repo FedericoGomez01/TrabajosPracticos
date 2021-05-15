@@ -109,19 +109,72 @@ int eEmployee_MostrarDadosDeBaja(eEmployee array[], int TAM);
 //CRITERIO -> -1 = MENOR A MAYOR
 //CRITERIO ->  1 = MAYOR A MENOR
 int eEmployee_Sort(eEmployee array[], int TAM, int criterio);
-
+/*
+ * Sort by criteria the information of employee
+ *
+ * @param receive an array of eEmployee type with the size of the structure and the criteria received by the user
+ *
+ * @return  1 if there are any errors or 0 if code works good.
+*/
 
 int ReturnSector(eEmployee Employee, char* SECTOR);
+/*
+ * Copy the sector at employee's array
+ *
+ * @param receive a position from my array of eEmployee type with the sector's pointer
+ *
+ * @return  1 if there are any errors or 0 if code works good.
+*/
 //ABM
 eEmployee eEmployee_CargarDatos(void);
+/*
+ * Save the information received by the user.
+ *
+ * @param void
+ *
+ * @return a position of array which is eEmployee type with was charged by the user
+*/
 eEmployee eEmployee_ModificarUno(eEmployee Employee);
+/*
+ * modify a position of array which is eEmployee type
+ *
+ * @param receive a position from my array of eEmployee type
+ *
+ * @return a position of array which is eEmployee type with was charged by the user
+*/
 int eEmployee_Alta(eEmployee array[], int TAM, int* id);
+/*
+ * charge the user's information
+ *
+ * @param receive an array of type eEmployee with the size of the structure and the ID's pointer
+ *
+ * @return 0 if there are any errors or 1 if code works good.
+*/
 int eEmployee_Baja(eEmployee array[], int TAM);
+/*
+ * discharge the user's information
+ *
+ * @param receive an array of type eEmployee with the size of the structure
+ *
+ * @return 0 if there are any errors or 1 if code works good.
+*/
 int eEmployee_Modificacion(eEmployee array[], int TAM);
-
+/*
+ * revise that array is used and calls eEmpolyee_ModificarUno function and validates the user accepting or skipping
+ *
+ * @param receive an array of type eEmployee with the size of the structure
+ *
+ * @return 0 if there are any errors or 1 if code works good.
+*/
 //PROMEDIO
 int eEmployee_PromedioSalario(eEmployee array[], int TAM);
-
+/*
+ * calculates the average of employee's salary and how many of theme is higher than the average
+ *
+ * @param receive an array of type eEmployee with the size of the structure
+ *
+ * @return -1 if there are any errors or 1 if code works good.
+*/
 /** FIN CABECERAS DE FUNCION*/
 #endif
 

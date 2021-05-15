@@ -556,6 +556,7 @@ int eEmployee_PromedioSalario(eEmployee array[], int TAM){
 		{
 			empleados++;
 			salarioAcumulador = salarioAcumulador + array[i].salario;
+			rtn = 1;
 		}
 	}
 
@@ -570,6 +571,7 @@ int eEmployee_PromedioSalario(eEmployee array[], int TAM){
 		if(array[i].isEmpty == OCUPADO && promedioSalario < array[i].salario)
 		{
 			empleadosMayorSalarios++;
+			rtn = 1;
 		}
 	}
 
