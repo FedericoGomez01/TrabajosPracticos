@@ -30,6 +30,7 @@ int main(void)
 	int valorMultiplicacion;
 	int validacionA;
 	int validacionB;
+	int rtndivision;
 	int flag1 = 0;
 	int flag2 = 0;
 	int flag3 =0;
@@ -78,15 +79,7 @@ int main(void)
 				{
 					suma(a,b, &valorSuma);
 					resta(a,b, &valorResta);
-
-					if(b==0)
-					{
-						printf("No se puede dividir por 0");
-					}
-					else
-					{
-						division(a,b, &valorDivision);
-					}
+					rtndivision = division(a,b, &valorDivision);
 					multiplicacion(a,b, &valorMultiplicacion);
 					factorialA = factorial(a);
 					factorialB = factorial(b);
@@ -104,14 +97,33 @@ int main(void)
 				{
 					printf("\nLa suma de %d + %d es = %d",a,b, valorSuma);
 					printf("\nLa resta de %d - %d es = %d", a, b, valorResta);
-					printf("\nLa divisioin de %d / %d es = %.2f",a,b, valorDivision);
-					printf("\nLa multiplicacion de %d * %d es = %.d",a , b, valorMultiplicacion);
-					printf("\nEl factorial de %d es: %d", a, factorialA);
-					printf("\nEl factorial de %d es: %d", b, factorialB);
+					if(rtndivision != -1)
+					{
+						printf("\nLa divisioin de %d / %d es = %.2f",a,b, valorDivision);
+
+					}
+					else{
+						printf("\nNo se puede dividir por 0");
+					}
+					printf("\nLa multiplicacion de %d * %d es = %d",a , b, valorMultiplicacion);
+					if(factorialA != -1)
+					{
+						printf("\nEl factorial de %d es: %d", a, factorialA);
+					}
+					else{
+						printf("\nNo se puede sacar un factorial de un numero negativo");
+					}
+					if(factorialB != -1)
+					{
+						printf("\nEl factorial de %d es: %d", a, factorialB);
+					}
+					else{
+						printf("\nNo se puede sacar un factorial de un numero negativo");
+					}
 				}
 				else
 				{
-					printf("No realizo los calculos");
+					printf("\nNo realizo los calculos");
 				}
 
 				break;
@@ -121,7 +133,7 @@ int main(void)
 
 
 	if(menu == 5)
-		printf("Gracias por usar la calculadora");
+		printf("\nGracias por usar la calculadora");
 
 	return EXIT_SUCCESS;
 }

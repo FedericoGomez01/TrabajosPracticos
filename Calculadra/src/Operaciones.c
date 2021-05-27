@@ -28,32 +28,50 @@ int resta(int a, int b, int* valorResta)
 //DIVISION
 int division(int a, int b, float* valorDivision)
 {
-	*valorDivision = (float)a / b;
+	int rtn;
+	if(b==0)
+	{
+		rtn = -1;
+	}
+	else
+	{
+		*valorDivision = (float)a / b;
+		rtn =0;
+	}
 
-	return 0;
+
+	return rtn;
 }
 
 //MULTIPLICACION
-int multiplicacion(int a, int b, float* valorMultiplicacion)
+void multiplicacion(int a, int b, float* valorMultiplicacion)
 {
-
-	*valorMultiplicacion = a * b;
-
-	return 0;
+	if(a != 0 && b != 0)
+	{
+		*valorMultiplicacion = a * b;
+	}else{
+		*valorMultiplicacion =0;
+	}
 }
 
 //FACTORIAL
 int factorial(int n)
 {
 	int resultado;
-	if(n==1 || n==0)
+	if(n >=0)
 	{
-		resultado = 1;
-	}
-	else
-	{
+		if(n==1 || n==0)
+		{
+			resultado = 1;
+		}
+		else
+		{
 
-		resultado = n * factorial(n-1);
+			resultado = n * factorial(n-1);
+		}
+	}
+	else{
+		resultado = -1;
 	}
 
 

@@ -15,7 +15,7 @@ int resta(int, int, int*);
 
 int division(int, int, float*);
 
-int multiplicacion(int, int , int*);
+void multiplicacion(int, int , int*);
 
 int factorial(int);
 
