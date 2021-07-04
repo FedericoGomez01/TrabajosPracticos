@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "ArrayEmployees.h"
 
-#define TAM_ESTRUCTURA 5
+#define TAM_ESTRUCTURA 1000
 
 
 int main(void) {

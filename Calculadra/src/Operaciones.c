@@ -29,13 +29,22 @@ int resta(int a, int b, int* valorResta)
 int division(int a, int b, float* valorDivision)
 {
 	int rtn;
+
 	if(b==0)
 	{
 		rtn = -1;
 	}
 	else
 	{
-		*valorDivision = (float)a / b;
+		if(a==0)
+		{
+			*valorDivision =0;
+
+		}else
+		{
+			*valorDivision = (float)a / b;
+
+		}
 		rtn =0;
 	}
 
